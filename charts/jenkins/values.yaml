@@ -682,6 +682,7 @@ controller:
   # -- Topology spread constraints
   topologySpreadConstraints: {}
 
+controller:
   ingress:
   enabled: true  # Enable ingress
   ingressClassName: kong  # Specify the ingress controller (Kong in this case)
