@@ -34,7 +34,7 @@ controller:
   componentName: "jenkins-controller"
   image:
     # -- Controller image registry
-    registry: "docker.io"
+    registry: docker.io
     # -- Controller image repository
     repository: "jenkins/jenkins"
 
