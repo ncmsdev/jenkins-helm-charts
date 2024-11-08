@@ -681,30 +681,30 @@ controller:
 
   # -- Topology spread constraints
   topologySpreadConstraints: {}
-controller:
+
   ingress:
-  enabled: true  # Enable ingress
-  ingressClassName: kong  # Specify the ingress controller (Kong in this case)
+    enabled: true  # Enable ingress
+    ingressClassName: kong  # Specify the ingress controller (Kong in this case)
   
   # Custom annotations for the ingress controller
-  annotations:
-    nginx.ingress.kubernetes.io/proxy-connect-timeout: "300"
-    nginx.ingress.kubernetes.io/proxy-read-timeout: "300"
-    nginx.ingress.kubernetes.io/proxy-send-timeout: "300"
-  
-  # The path configuration (root path)
-  path: /
-  pathType: ImplementationSpecific
-  
-  # Define the list of hostnames for this ingress
-  hosts:
-    - jenkinskube.numocity.in  # Replace with your own domain name
-  
-  # TLS configuration
-  tls:
-    - secretName: jenkins-tls  # Secret containing your TLS certificate
-      hosts:
-        - jenkinskube.numocity.in  # Replace with your own domain for the TLS configuration
+    annotations:
+      nginx.ingress.kubernetes.io/proxy-connect-timeout: "300"
+      nginx.ingress.kubernetes.io/proxy-read-timeout: "300"
+      nginx.ingress.kubernetes.io/proxy-send-timeout: "300"
+    
+    # The path configuration (root path)
+    path: /
+    pathType: ImplementationSpecific
+    
+    # Define the list of hostnames for this ingress
+    hosts:
+      - jenkinskube.numocity.in  # Replace with your own domain name
+    
+    # TLS configuration
+    tls:
+      - secretName: jenkins-tls  # Secret containing your TLS certificate
+        hosts:
+          - jenkinskube.numocity.in  # Replace with your own domain for the TLS configuration
 
 
   # often you want to have your controller all locked down and private,
